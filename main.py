@@ -1,7 +1,7 @@
 # Completa las validaciones y llama a la función
 
 import sys
-from solucion import [NOMBRE_DE_LA_FUNCION]
+from solucion import reloj_arena
 
 def main():
     """
@@ -21,19 +21,21 @@ def main():
     if len(data) < 2:
         print("Error: Se esperan 2 lineas de entrada (altura, caracter)")
         return
-
+    
     m_str = data[0].strip() # Primera línea: altura máxima (como texto)
     s = data[1]             # Segunda línea: carácter (o cadena) para la figura
 
+    # Verificar que s no está vacío
+    if s == "":
+        print("Error: El caracter no puede ser vacío")
+        return
+
     # Intentar convertir la altura a entero
     try:
-        # TODO: Convertir m_str a entero y asignarlo a m
-        pass
+        m = int(m_str)
+        reloj_arena(m, s)
     except ValueError:
-        # TODO: imprimir "Error: La altura debe ser un numero entero" y salir
-        pass
-
-    # TODO: llamar a la función triangulo_simetrico con los parámetros m y s
+        print("Error: La altura debe ser un numero entero")
 
 if __name__ == "__main__":
     main()
