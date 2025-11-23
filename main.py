@@ -21,9 +21,14 @@ def main():
     if len(data) < 2:
         print("Error: Se esperan 2 lineas de entrada (altura, caracter)")
         return
-
+    
     m_str = data[0].strip() # Primera línea: altura máxima (como texto)
     s = data[1]             # Segunda línea: carácter (o cadena) para la figura
+
+    # Verificar que s no está vacío
+    if s == "":
+        print("Error: El caracter no puede ser vacío")
+        return
 
     # Intentar convertir la altura a entero
     try:
